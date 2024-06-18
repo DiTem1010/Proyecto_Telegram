@@ -17,7 +17,17 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
     @Override
     public void onUpdateEventReceived(Update update) {
         // TODO: escribiremos la funcionalidad principal del bot aquí
-        sendTextMessageAsync("Hola futuro programador Diglas!");
+
+
+        if(getMessageText().equals("/start")){
+            sendTextMessageAsync("Hola _futuro_ *programador* Diglas!");
+        }
+        if(getMessageText().contains("hola")){
+            sendTextMessageAsync("Hola ¿Cual es tu nombre?");
+        }
+        if(getMessageText().contains("me llamo")){
+            sendTextMessageAsync("Encantado de conocerte, soy Gato");
+        }
     }
 
     public static void main(String[] args) throws TelegramApiException {
